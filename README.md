@@ -1,116 +1,169 @@
-# Project overview:
-  Cardiovascular diseases are among the leading causes of mortality worldwide. Early detection plays a crucial role in improving survival rates.
-  This project builds and compares multiple Machine Learning and Deep Learning models to predict the presence of heart disease using patient clinical data.
-  The objective is to evaluate model performance using multiple metrics and determine the most effective predictive approach.
+# ❤️ Heart Disease Prediction using Machine Learning & Deep Learning
 
-# Dataset Description
-  The dataset contains medical attributes of patients:
-    age – Age of patient
-    sex – Gender (0 = female, 1 = male)
-    cp – Chest pain type
-    trestbps – Resting blood pressure
-    chol – Serum cholesterol
-    fbs – Fasting blood sugar
-    restecg – Resting ECG results
-    thalach – Maximum heart rate achieved
-    exang – Exercise induced angina
-    oldpeak – ST depression
-    slope – Slope of peak exercise ST segment
-    ca – Number of major vessels
-    thal – Thalassemia
-    num – Target variable
+## 📌 Project Overview
 
-  Target Encoding:
-    0 → No heart disease
-    1 → Heart disease present
-    The original target values were binarized to convert the problem into binary classification.
+Cardiovascular diseases are among the leading causes of mortality
+worldwide. Early detection plays a crucial role in improving survival
+rates.
 
-# Data Preprocessing
-  To ensure clean and reproducible processing, a ColumnTransformer pipeline was used.
+This project builds and compares multiple Machine Learning and Deep
+Learning models to predict the presence of heart disease using patient
+clinical data.
 
-  Numerical Features:
-    Missing values handled using mean imputation
-    Standardized using StandardScaler
+The objective is to evaluate model performance using multiple evaluation
+metrics and determine the most effective predictive approach.
 
-  Categorical Features:
-    Missing values handled using most frequent imputation
-    Encoded using OneHotEncoder
+------------------------------------------------------------------------
 
-  Train-Test Split:
-    80% Training
-    20% Testing
-    Stratified to preserve class balance
+## 📊 Dataset Description
 
-# Models Implemented
+The dataset contains the following medical attributes:
 
-The following models were implemented and tuned using GridSearchCV (5-fold cross-validation):
-1. Logistic Regression
-  Hyperparameter tuned: C
+  Feature    Description
+  ---------- -----------------------------------
+  age        Age of patient
+  sex        Gender (0 = female, 1 = male)
+  cp         Chest pain type
+  trestbps   Resting blood pressure
+  chol       Serum cholesterol
+  fbs        Fasting blood sugar
+  restecg    Resting ECG results
+  thalach    Maximum heart rate achieved
+  exang      Exercise induced angina
+  oldpeak    ST depression
+  slope      Slope of peak exercise ST segment
+  ca         Number of major vessels
+  thal       Thalassemia
+  num        Target variable
 
-3. K-Nearest Neighbors (KNN)
-  Hyperparameter tuned: n_neighbors
+### 🎯 Target Encoding
 
-4. Support Vector Machine (SVM)
-  Hyperparameters tuned: C, gamma
+-   0 → No heart disease\
+-   1 → Heart disease present
 
-5. XGBoost
-  Hyperparameters tuned: max_depth, learning_rate
+The original target values were binarized to convert the problem into
+binary classification.
 
-6. LightGBM
-  Hyperparameters tuned: max_depth, learning_rate
+------------------------------------------------------------------------
 
-7. Multi-Layer Perceptron (PyTorch)
-  Neural Network Architecture:
-    Input Layer
-    Hidden Layer (64 neurons, ReLU)
-    Hidden Layer (32 neurons, ReLU)
-    Output Layer (Sigmoid)
-   
-  Training Details:
-    Loss Function: Binary Cross Entropy
-    Optimizer: Adam
-    Epochs: 20
-    Batch Size: 32
+## ⚙️ Data Preprocessing
 
-# Evaluation Metrics
-  Each model was evaluated using:
-    Accuracy
-    Precision
-    Recall
-    F1 Score
-    AUC-ROC
-    Confusion Matrix
-  These metrics provide a comprehensive understanding of classification performance.
+To ensure clean and reproducible processing, a ColumnTransformer
+pipeline was used.
 
-# Tech Stack
-  Python
-  Pandas
-  NumPy
-  Matplotlib
-  Seaborn
-  Scikit-learn
-  XGBoost
-  LightGBM
-  PyTorch
+### 🔢 Numerical Features
 
-# Project Structure
-  heart-disease-prediction/
-  │
-  ├── heart_disease_notebook.ipynb
-  ├── cleaned_heart_disease.csv
-  ├── final_model_results.csv
-  ├── model_comparison.png
-  ├── presentation.pptx
-  ├── requirements.txt
-  └── README.md
-  
-# How to Run This Project
-  Clone repository:
+-   Missing values handled using Mean Imputation
+-   Standardized using StandardScaler
+
+### 🔤 Categorical Features
+
+-   Missing values handled using Most Frequent Imputation
+-   Encoded using OneHotEncoder
+
+### 📂 Train-Test Split
+
+-   80% Training\
+-   20% Testing\
+-   Stratified to preserve class balance
+
+------------------------------------------------------------------------
+
+## 🤖 Models Implemented
+
+The following models were implemented and tuned using GridSearchCV
+(5-fold cross-validation):
+
+### 1️⃣ Logistic Regression
+
+-   Hyperparameter tuned: C
+
+### 2️⃣ K-Nearest Neighbors (KNN)
+
+-   Hyperparameter tuned: n_neighbors
+
+### 3️⃣ Support Vector Machine (SVM)
+
+-   Hyperparameters tuned: C, gamma
+
+### 4️⃣ XGBoost
+
+-   Hyperparameters tuned: max_depth, learning_rate
+
+### 5️⃣ LightGBM
+
+-   Hyperparameters tuned: max_depth, learning_rate
+
+### 6️⃣ Multi-Layer Perceptron (PyTorch)
+
+Neural Network Architecture: - Input Layer - Hidden Layer (64 neurons,
+ReLU) - Hidden Layer (32 neurons, ReLU) - Output Layer (Sigmoid)
+
+Training Details: - Loss Function: Binary Cross Entropy - Optimizer:
+Adam - Epochs: 20 - Batch Size: 32
+
+------------------------------------------------------------------------
+
+## 📈 Evaluation Metrics
+
+Each model was evaluated using:
+
+-   Accuracy
+-   Precision
+-   Recall
+-   F1 Score
+-   AUC-ROC
+-   Confusion Matrix
+
+These metrics provide a comprehensive understanding of classification
+performance.
+
+------------------------------------------------------------------------
+
+## 🛠 Tech Stack
+
+-   Python
+-   Pandas
+-   NumPy
+-   Matplotlib
+-   Seaborn
+-   Scikit-learn
+-   XGBoost
+-   LightGBM
+-   PyTorch
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
+
+    heart-disease-prediction/
+    │
+    ├── heart_disease_notebook.ipynb
+    ├── cleaned_heart_disease.csv
+    ├── final_model_results.csv
+    ├── model_comparison.png
+    ├── presentation.pptx
+    ├── requirements.txt
+    └── README.md
+
+------------------------------------------------------------------------
+
+## 🚀 How to Run This Project
+
+### 1️⃣ Clone the repository
+
     git clone https://github.com/yourusername/heart-disease-prediction.git
-    Install dependencies:
-    pip install -r requirements.txt
-    Run the notebook: jupyter notebook heart_disease_notebook.ipynb
-    
 
-# Author
-  Jitendra Singh kushwah
+### 2️⃣ Install dependencies
+
+    pip install -r requirements.txt
+
+### 3️⃣ Run the notebook
+
+    jupyter notebook heart_disease_notebook.ipynb
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Jitendra Singh Kushwah
